@@ -1,38 +1,5 @@
-<app-loading
-  *ngIf="load"
-  [message]="'Cargando, espere un momento porfavor'"
-></app-loading>
-
-<!-- <div class="container">
-  <div class="row">
-    <div
-      class="card col-md-4"
-      style="width: 18rem"
-      *ngFor="let ch of charactersList"
-    >
-      <img class="card-img-top" [src]="ch.img" alt="Card image cap" />
-      <div class="card-body">
-        <h5 class="card-title">{{ ch.name }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ ch.nickname }}</h6>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 mt-4" *ngFor="let ch of charactersList">
-      <div class="card" >
-        <img [src]="ch.img" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+  <a class="navbar-brand text-success">App Bracking Bad</a>
+  <span class="badge bg-success">Carlos</span>
+</nav>
+<router-outlet></router-outlet>

@@ -1,3 +1,6 @@
-.col-sm-4{
-    background-color: rgb(105, 153, 51);
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  padding: 10px 10px;
 }
