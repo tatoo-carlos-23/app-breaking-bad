@@ -1,3 +1,9 @@
+.c-panel {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
 .navbar {
   position: sticky;
   top: 0;

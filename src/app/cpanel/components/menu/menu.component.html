@@ -1,0 +1,13 @@
+<div class="menu">
+  <ul class="list-group mb-2" *ngFor="let m of listMenu">
+    <li
+      class="list-group-item"
+      (click)="closeMenuBtn()"
+      [routerLink]="m.ruta"
+      routerLinkActive="active"
+    >
+      {{ m.name }}
+    </li>
+  </ul>
+  <img src="../../../../assets/breakingbad.png" alt="" class="img-bba" />
+</div>

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CharacterComponent } from './character/character.component';
+import { CharacterComponent } from './pages/character/character.component';
 import { CpanelComponent } from './cpanel.component';
-import { DeathComponent } from './death/death.component';
-import { EpisodeComponent } from './episode/episode.component';
-import { QuoteComponent } from './quote/quote.component';
+import { DeathComponent } from './pages/death/death.component';
+import { EpisodeComponent } from './pages/episode/episode.component';
+import { QuoteComponent } from './pages/quote/quote.component';
 
 const routes: Routes = [
   {

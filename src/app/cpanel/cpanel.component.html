@@ -1,5 +1,12 @@
 <nav class="navbar navbar-dark bg-dark justify-content-between">
-  <a class="navbar-brand text-success">App Bracking Bad</a>
-  <span class="badge bg-success">Carlos</span>
+  <a class="navbar-brand text-success"
+    ><fa-icon [icon]="faCoffee"></fa-icon> App Bracking Bad</a
+  >
+  <button class="btn btn-outline-success" (click)="openClose = !openClose">
+    <fa-icon
+      [icon]="openClose ? ICON.faAngleDoubleLeft : ICON.faAngleDoubleDown"
+    ></fa-icon>
+  </button>
 </nav>
+<app-menu *ngIf="openClose" (closeMenu)="openCloseMenu($event)"></app-menu>
 <router-outlet></router-outlet>
