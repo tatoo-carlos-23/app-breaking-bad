@@ -17,4 +17,8 @@ export class BreakingBadService {
   getAllCharacters(): Observable<Characters[]> {
     return this.HTTP.get<any>(`${URL}/characters`)
   }
+
+  getAllCharactersOne(id: number): Observable<Characters[]> {
+    return this.HTTP.get<any>(`${URL}/characters/${id}`)
+  }
 }

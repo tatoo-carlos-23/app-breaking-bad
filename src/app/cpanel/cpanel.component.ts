@@ -8,17 +8,24 @@ import { Characters } from '../interfaces/characters.interface';
   styleUrls: ['./cpanel.component.css'],
 })
 export class CpanelComponent implements OnInit {
-  constructor(private API: BreakingBadService) { }
+  constructor(private API: BreakingBadService) {}
 
   charactersList: Characters[] = [];
-
+  
   ngOnInit(): void {
     this.get();
+    this.getOne();
   }
 
   get() {
     this.API.getAllCharacters().subscribe((d: Characters[]) => {
-      this.charactersList = d
+      this.charactersList = d;
+    });
+  }
+
+  getOne() {
+    this.API.getAllCharactersOne(3).subscribe((d: Characters[]) => {
+      console.log('Uno: ', d[0]);
     });
   }
 }

@@ -39,6 +39,9 @@ class BreakingBadService {
     getAllCharacters() {
         return this.HTTP.get(`${_api__WEBPACK_IMPORTED_MODULE_0__.URL}/characters`);
     }
+    getAllCharactersOne(id) {
+        return this.HTTP.get(`${_api__WEBPACK_IMPORTED_MODULE_0__.URL}/characters/${id}`);
+    }
 }
 BreakingBadService.ɵfac = function BreakingBadService_Factory(t) { return new (t || BreakingBadService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient)); };
 BreakingBadService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: BreakingBadService, factory: BreakingBadService.ɵfac, providedIn: 'root' });
@@ -114,17 +117,23 @@ class CpanelComponent {
     }
     ngOnInit() {
         this.get();
+        this.getOne();
     }
     get() {
         this.API.getAllCharacters().subscribe((d) => {
             this.charactersList = d;
         });
     }
+    getOne() {
+        this.API.getAllCharactersOne(3).subscribe((d) => {
+            console.log('Uno: ', d[0]);
+        });
+    }
 }
 CpanelComponent.ɵfac = function CpanelComponent_Factory(t) { return new (t || CpanelComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_api_breaking_bad_service__WEBPACK_IMPORTED_MODULE_0__.BreakingBadService)); };
 CpanelComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: CpanelComponent, selectors: [["app-cpanel"]], decls: 3, vars: 1, consts: [["class", "list-group", 4, "ngFor", "ngForOf"], [1, "list-group"], [1, "list-group-item"]], template: function CpanelComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "cpanel works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Breacking Bad!");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, CpanelComponent_ul_2_Template, 3, 1, "ul", 0);
     } if (rf & 2) {
