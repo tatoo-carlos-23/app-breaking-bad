@@ -11,14 +11,18 @@ export class CpanelComponent implements OnInit {
   constructor(private API: BreakingBadService) {}
 
   charactersList: Characters[] = [];
-  
+  load: boolean = true;
   ngOnInit(): void {
     this.get();
     this.getOne();
   }
 
   get() {
+    this.load = true;
     this.API.getAllCharacters().subscribe((d: Characters[]) => {
+      this.load = false;
+      console.log(d);
+
       this.charactersList = d;
     });
   }

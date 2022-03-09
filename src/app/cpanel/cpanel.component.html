@@ -1,9 +1,40 @@
-<p>Breacking Bad!</p>
+<app-loading
+  *ngIf="load"
+  [message]="'Cargando, espere un momento porfavor'"
+></app-loading>
 
-<ul class="list-group" *ngFor="let ch of charactersList">
-  <li class="list-group-item">
-    <span class="badge bg-secondary">{{ ch.char_id }}</span> -
-    <span class="badge bg-success">{{ ch.name }}</span> -
-    <span class="badge bg-primary">{{ ch.nickname }}</span>
-  </li>
-</ul>
+<!-- <div class="container">
+  <div class="row">
+    <div
+      class="card col-md-4"
+      style="width: 18rem"
+      *ngFor="let ch of charactersList"
+    >
+      <img class="card-img-top" [src]="ch.img" alt="Card image cap" />
+      <div class="card-body">
+        <h5 class="card-title">{{ ch.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ ch.nickname }}</h6>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div
+      class="card container"
+      style="width: 350px"
+      *ngFor="let ch of charactersList"
+    >
+      <img [src]="ch.img" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
