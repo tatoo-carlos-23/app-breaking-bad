@@ -5,25 +5,21 @@ import { Characters } from 'src/app/interfaces/characters.interface';
 @Component({
   selector: 'app-character',
   templateUrl: './character.component.html',
-  styleUrls: ['./character.component.css']
+  styleUrls: ['./character.component.css'],
 })
 export class CharacterComponent implements OnInit {
-
   constructor(private API: BreakingBadService) {}
 
   charactersList: Characters[] = [];
   load: boolean = true;
   ngOnInit(): void {
     this.get();
-    this.getOne();
   }
 
   get() {
     this.load = true;
     this.API.getAllCharacters().subscribe((d: Characters[]) => {
       this.load = false;
-      console.log(d);
-
       this.charactersList = d;
     });
   }

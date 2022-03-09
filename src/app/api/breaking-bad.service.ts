@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { URL } from './api';
 import { Observable } from 'rxjs';
 import { Characters } from '../interfaces/characters.interface';
+import { Episodes } from '../interfaces/episode.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class BreakingBadService {
     return this.HTTP.get<any>(`${URL}/characters/${id}`);
   }
 
-  getAllEpisodes(): Observable<any[]> {
+  getAllEpisodes(): Observable<Episodes[]> {
     return this.HTTP.get<any>(`${URL}/episodes`);
   }
 }
