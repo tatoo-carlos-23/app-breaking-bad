@@ -1,8 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-interface listMenuInt {
-  name: string;
-  ruta: string;
-}
+import { listMenuInt } from 'src/app/interfaces/menu.interface';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
