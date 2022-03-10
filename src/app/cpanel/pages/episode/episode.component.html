@@ -2,3 +2,26 @@
   *ngIf="load"
   [message]="'Cargando episodes, espere un momento porfavor'"
 ></app-loading>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mt-4" *ngFor="let ch of episodesList">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">
+            <span class="badge bg-success">Title: {{ ch.title }}</span>
+          </h4> 
+          <h6 class="card-subtitle">
+            <span class="badge bg-primary float-right">Season {{ ch.season }}</span> ->
+            <span class="badge bg-secondary float-left">Episode {{ ch.episode }}</span>
+          </h6>
+          <div class="list-group mt-4">
+            <a class="list-group-item list-group-item-action active">Characters:</a>
+            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
